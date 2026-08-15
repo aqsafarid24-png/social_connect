@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Friends | SocialConnect</title>
+
+    <!-- Friends CSS -->
+    <link rel="stylesheet" href="/css/friends.css">
+
+    <!-- Sidebar CSS -->
+    <link rel="stylesheet" href="/css/sidebar.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HAMBURGER BUTTON
+    ========================== -->
+
+    <button id="menuBtn" class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- =========================
+         OVERLAY
+    ========================== -->
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside id="sidebarMenu" class="sidebar-menu">
+
+        <div class="sidebar-logo">
+            SocialConnect
+        </div>
+
+
+        <a href="/dashboard">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="/profile">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </a>
+
+
+        <a href="/friends" class="active">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            Friends
+
+        </a>
+
+
+        <a href="/messages">
+
+            <i class="fa-solid fa-message"></i>
+
+            Messages
+
+        </a>
+
+
+        <a href="/notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+            Notifications
+
+        </a>
+
+
+        <a href="/settings">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+
+        <a href="/" class="logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =========================
+         FRIENDS PAGE
+    ========================== -->
+
+    <section class="friends-page">
+
+        <div class="page-header">
+
+            <h1>Friend Requests</h1>
+
+            <input
+                type="text"
+                placeholder="Search Friends...">
+
+        </div>
+
+
+        <div class="friends-grid">
+
+
+            <!-- Sarah -->
+
+            <div class="friend-card">
+
+                <img
+                    src="/images/user1.jfif"
+                    alt="Sarah Khan">
+
+                <h3>Sarah Khan</h3>
+
+                <p>12 Mutual Friends</p>
+
+                <div class="friend-buttons">
+
+                    <button class="accept">
+                        Accept
+                    </button>
+
+                    <button class="reject">
+                        Reject
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Ali -->
+
+            <div class="friend-card">
+
+                <img
+                    src="/images/user2.jfif"
+                    alt="Ali">
+
+                <h3>Ali</h3>
+
+                <p>8 Mutual Friends</p>
+
+                <div class="friend-buttons">
+
+                    <button class="accept">
+                        Accept
+                    </button>
+
+                    <button class="reject">
+                        Reject
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Hani -->
+
+            <div class="friend-card">
+
+                <img
+                    src="/images/user3.jfif"
+                    alt="Hani">
+
+                <h3>Hani</h3>
+
+                <p>18 Mutual Friends</p>
+
+                <div class="friend-buttons">
+
+                    <button class="accept">
+                        Accept
+                    </button>
+
+                    <button class="reject">
+                        Reject
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FRIENDS JAVASCRIPT
+    ========================== -->
+
+    <script src="/js/friends.js"></script>
+
+
+    <!-- =========================
+         SIDEBAR JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+
+        const sidebar = document.getElementById("sidebarMenu");
+
+        const overlay = document.getElementById("sidebarOverlay");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            sidebar.classList.toggle("open");
+
+            overlay.classList.toggle("show");
+
+        });
+
+
+        overlay.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+
+            overlay.classList.remove("show");
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

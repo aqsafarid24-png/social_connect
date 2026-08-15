@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Social Networking Platform</title>
+
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Sidebar CSS -->
+    <link rel="stylesheet" href="sidebar.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- =================================
+         HAMBURGER BUTTON
+    ================================== -->
+
+    <button id="menuBtn" class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- =================================
+         OVERLAY
+    ================================== -->
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+    <!-- =================================
+         SIDEBAR
+    ================================== -->
+
+    <aside id="sidebarMenu" class="sidebar-menu">
+
+        <div class="sidebar-logo">
+            SocialConnect
+        </div>
+
+
+        <a href="/">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </a>
+
+
+        <a href="/dashboard">
+
+            <i class="fa-solid fa-table-columns"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="/profile">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </a>
+
+
+        <a href="/friends">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            Friends
+
+        </a>
+
+
+        <a href="/messages">
+
+            <i class="fa-solid fa-message"></i>
+
+            Messages
+
+        </a>
+
+
+        <a href="/notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+            Notifications
+
+        </a>
+
+
+        <a href="/settings">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+
+        <a href="/" class="logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =================================
+         ORIGINAL HEADER
+    ================================== -->
+
+    <header>
+
+        <div class="logo">
+            SocialConnect
+        </div>
+
+
+        <nav>
+
+            <a href="#">
+                Home
+            </a>
+
+
+            <button
+                class="nav-btn"
+                onclick="window.location.href='/login'">
+
+                Login
+
+            </button>
+
+
+            <button
+                class="nav-btn register"
+                onclick="window.location.href='/register'">
+
+                Register
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================
+         HERO
+    ================================== -->
+
+    <section class="hero">
+
+        <div class="left">
+
+            <h1>
+                Connect With Peoples Around The World
+            </h1>
+
+
+            <button
+                class="btn"
+                onclick="window.location.href='/register'">
+
+                Get Started
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         FEATURES
+    ================================== -->
+
+    <section class="features">
+
+
+        <div class="card">
+
+            <img
+                src="/images/connect.jpeg"
+                alt="Connect">
+
+            <h3>
+                Connect
+            </h3>
+
+            <p>
+                Find and connect with friends worldwide.
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <img
+                src="/images/share.jpeg"
+                alt="Share">
+
+            <h3>
+                Share
+            </h3>
+
+            <p>
+                Post photos, videos, and memorable moments.
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <img
+                src="/images/chat.jpeg"
+                alt="Chat">
+
+            <h3>
+                Chat
+            </h3>
+
+            <p>
+                Stay connected through real-time conversations.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         ABOUT
+    ================================== -->
+
+    <section class="about">
+
+        <div class="about-content">
+
+            <h2>
+                About
+            </h2>
+
+
+            <p>
+                SocialConnect is a modern social networking platform where people can
+                connect with friends, share photos and videos, chat in real-time,
+                discover new communities, and stay updated with the latest activities.
+            </p>
+
+
+            <button class="btn">
+                Learn More
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         STATS
+    ================================== -->
+
+    <section class="stats">
+
+
+        <div class="stat-box">
+
+            <h2>
+                10K+
+            </h2>
+
+            <p>
+                Active Users
+            </p>
+
+        </div>
+
+
+
+        <div class="stat-box">
+
+            <h2>
+                50K+
+            </h2>
+
+            <p>
+                Posts Shared
+            </p>
+
+        </div>
+
+
+
+        <div class="stat-box">
+
+            <h2>
+                25K+
+            </h2>
+
+            <p>
+                Messages Sent
+            </p>
+
+        </div>
+
+
+
+        <div class="stat-box">
+
+            <h2>
+                5K+
+            </h2>
+
+            <p>
+                Communities
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                SocialConnect
+            </h2>
+
+
+            <p>
+                Connect, Share, and Grow Together.
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 SocialConnect. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =================================
+         HAMBURGER JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sidebarMenu =
+            document.getElementById("sidebarMenu");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            sidebarMenu.classList.toggle("open");
+
+            sidebarOverlay.classList.toggle("show");
+
+        });
+
+
+        sidebarOverlay.addEventListener("click", function () {
+
+            sidebarMenu.classList.remove("open");
+
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

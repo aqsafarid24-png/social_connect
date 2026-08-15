@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Messages | SocialConnect</title>
+
+    <!-- Messages CSS -->
+    <link rel="stylesheet" href="/css/messages.css">
+
+    <!-- Hamburger Sidebar CSS -->
+    <link rel="stylesheet" href="/css/sidebar.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- =================================
+         HAMBURGER BUTTON
+    ================================== -->
+
+    <button id="menuBtn" class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- =================================
+         OVERLAY
+    ================================== -->
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+    <!-- =================================
+         WEBSITE SIDEBAR MENU
+    ================================== -->
+
+    <aside id="sidebarMenu" class="sidebar-menu">
+
+        <div class="sidebar-logo">
+            SocialConnect
+        </div>
+
+
+        <a href="/dashboard">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="/profile">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </a>
+
+
+        <a href="/friends">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            Friends
+
+        </a>
+
+
+        <a href="/messages" class="active">
+
+            <i class="fa-solid fa-message"></i>
+
+            Messages
+
+        </a>
+
+
+        <a href="/notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+            Notifications
+
+        </a>
+
+
+        <a href="/settings">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+
+        <a href="/" class="logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =================================
+         CHAT CONTAINER
+    ================================== -->
+
+    <div class="chat-container">
+
+
+        <!-- =================================
+             CHAT USERS
+        ================================== -->
+
+        <div class="sidebar">
+
+            <h2>Chats</h2>
+
+
+            <input
+                type="text"
+                id="searchUser"
+                placeholder="Search Friends...">
+
+
+            <!-- Sarah -->
+
+            <div
+                class="chat-user active"
+                data-user="Sarah Khan"
+                data-status="Online"
+                data-image="/images/user1.jfif">
+
+                <img
+                    src="/images/user1.jfif"
+                    alt="Sarah Khan">
+
+                <div>
+
+                    <h3>Sarah Khan</h3>
+
+                    <p>Online</p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Ali -->
+
+            <div
+                class="chat-user"
+                data-user="Ali Ahmed"
+                data-status="Online"
+                data-image="/images/user2.jfif">
+
+                <img
+                    src="/images/user2.jfif"
+                    alt="Ali Ahmed">
+
+                <div>
+
+                    <h3>Ali Ahmed</h3>
+
+                    <p>Online</p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Hani -->
+
+            <div
+                class="chat-user"
+                data-user="Hani"
+                data-status="Last Seen 5 min ago"
+                data-image="/images/user3.jfif">
+
+                <img
+                    src="/images/user3.jfif"
+                    alt="Hani">
+
+                <div>
+
+                    <h3>Hani</h3>
+
+                    <p>Last Seen 5 min ago</p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             CHAT AREA
+        ================================== -->
+
+        <div class="chat-area">
+
+
+            <!-- Chat Header -->
+
+            <div class="chat-header">
+
+                <img
+                    id="chatImage"
+                    src="/images/user1.jfif"
+                    alt="Sarah Khan">
+
+
+                <div>
+
+                    <h2 id="chatName">
+                        Sarah Khan
+                    </h2>
+
+                    <span id="chatStatus">
+                        Online
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Messages -->
+
+            <div
+                class="messages"
+                id="messages">
+
+            </div>
+
+
+
+            <!-- Message Input -->
+
+            <div class="chat-input">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Type your message...">
+
+
+                <button
+                    id="sendBtn"
+                    type="button">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         EXISTING CHAT JAVASCRIPT
+    ================================== -->
+
+    <script src="/js/messages.js"></script>
+
+
+
+    <!-- =================================
+         HAMBURGER JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sidebarMenu =
+            document.getElementById("sidebarMenu");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            sidebarMenu.classList.toggle("open");
+
+            sidebarOverlay.classList.toggle("show");
+
+        });
+
+
+        sidebarOverlay.addEventListener("click", function () {
+
+            sidebarMenu.classList.remove("open");
+
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

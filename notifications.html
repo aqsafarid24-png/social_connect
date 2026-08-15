@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | SocialConnect</title>
+
+    <!-- Notifications CSS -->
+    <link rel="stylesheet" href="/css/notifications.css">
+
+    <!-- Sidebar CSS -->
+    <link rel="stylesheet" href="/css/sidebar.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HAMBURGER BUTTON
+    ========================== -->
+
+    <button id="menuBtn" class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- =========================
+         OVERLAY
+    ========================== -->
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside id="sidebarMenu" class="sidebar-menu">
+
+        <div class="sidebar-logo">
+            SocialConnect
+        </div>
+
+
+        <a href="/dashboard">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="/profile">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </a>
+
+
+        <a href="/friends">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            Friends
+
+        </a>
+
+
+        <a href="/messages">
+
+            <i class="fa-solid fa-message"></i>
+
+            Messages
+
+        </a>
+
+
+        <a href="/notifications" class="active">
+
+            <i class="fa-solid fa-bell"></i>
+
+            Notifications
+
+        </a>
+
+
+        <a href="/settings">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+
+        <a href="/" class="logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =========================
+         NOTIFICATIONS PAGE
+    ========================== -->
+
+    <section class="notifications-page">
+
+
+        <div class="page-header">
+
+            <h1>Notifications</h1>
+
+            <button id="clearAll">
+                Clear All
+            </button>
+
+        </div>
+
+
+
+        <div id="notificationList">
+
+
+            <!-- Like -->
+
+            <div class="notification-card">
+
+                <i class="fa-solid fa-heart icon like"></i>
+
+                <div>
+
+                    <h3>
+                        Sarah Khan liked your post.
+                    </h3>
+
+                    <p>
+                        2 minutes ago
+                    </p>
+
+                </div>
+
+                <button class="read-btn">
+                    Mark as Read
+                </button>
+
+            </div>
+
+
+
+            <!-- Comment -->
+
+            <div class="notification-card">
+
+                <i class="fa-solid fa-comment icon comment"></i>
+
+                <div>
+
+                    <h3>
+                        Ali Ahmed commented on your post.
+                    </h3>
+
+                    <p>
+                        10 minutes ago
+                    </p>
+
+                </div>
+
+                <button class="read-btn">
+                    Mark as Read
+                </button>
+
+            </div>
+
+
+
+            <!-- Friend Request -->
+
+            <div class="notification-card">
+
+                <i class="fa-solid fa-user-plus icon friend"></i>
+
+                <div>
+
+                    <h3>
+                        Ali sent you a friend request.
+                    </h3>
+
+                    <p>
+                        30 minutes ago
+                    </p>
+
+                </div>
+
+                <button class="read-btn">
+                    Mark as Read
+                </button>
+
+            </div>
+
+
+
+            <!-- Share -->
+
+            <div class="notification-card">
+
+                <i class="fa-solid fa-share icon share"></i>
+
+                <div>
+
+                    <h3>
+                        Your post was shared by Hassan.
+                    </h3>
+
+                    <p>
+                        1 hour ago
+                    </p>
+
+                </div>
+
+                <button class="read-btn">
+                    Mark as Read
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Existing Notifications JS -->
+
+    <script src="/js/notifications.js"></script>
+
+
+
+    <!-- Hamburger JS -->
+
+    <script>
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sidebarMenu =
+            document.getElementById("sidebarMenu");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            sidebarMenu.classList.toggle("open");
+
+            sidebarOverlay.classList.toggle("show");
+
+        });
+
+
+        sidebarOverlay.addEventListener("click", function () {
+
+            sidebarMenu.classList.remove("open");
+
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

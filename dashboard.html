@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - SocialConnect</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/upload.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HAMBURGER
+    ========================== -->
+
+    <button id="menuBtn" class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside id="sidebarMenu" class="sidebar-menu">
+
+        <div class="sidebar-logo">
+            SocialConnect
+        </div>
+
+        <a href="/dashboard" class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="/profile">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+        <a href="/friends">
+            <i class="fa-solid fa-user-group"></i>
+            Friends
+        </a>
+
+        <a href="/messages">
+            <i class="fa-solid fa-message"></i>
+            Messages
+        </a>
+
+        <a href="/notifications">
+            <i class="fa-solid fa-bell"></i>
+            Notifications
+        </a>
+
+        <a href="/settings">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </a>
+
+        <a href="/" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </aside>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            SocialConnect
+        </div>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Search friends...">
+
+        </div>
+
+        <div class="top-icons">
+
+    <!-- Notification Bell -->
+
+    <div class="notification-wrapper">
+
+        <button
+            id="notificationBtn"
+            class="notification-btn"
+            type="button"
+            aria-label="Notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span
+                id="notificationCount"
+                class="notification-count">
+                3
+            </span>
+
+        </button>
+
+
+        <!-- Notification Dropdown -->
+
+        <div
+            id="notificationDropdown"
+            class="notification-dropdown">
+
+
+            <!-- Header -->
+
+            <div class="notification-header">
+
+                <div>
+
+                    <strong>
+                        Notifications
+                    </strong>
+
+                    <span id="notificationStatus">
+                        3 unread
+                    </span>
+
+                </div>
+
+                <button
+                    id="markAllRead"
+                    type="button">
+
+                    Mark all read
+
+                </button>
+
+            </div>
+
+
+            <!-- Notification List -->
+
+            <div
+                id="notificationList"
+                class="notification-list">
+
+
+                <!-- Friend Request -->
+
+                <div
+                    class="notification-item unread"
+                    data-notification="1">
+
+                    <div class="notification-icon friend">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </div>
+
+                    <div class="notification-content">
+
+                        <strong>
+                            Sarah Khan
+                        </strong>
+
+                        <p>
+                            sent you a friend request.
+                        </p>
+
+                        <small>
+                            5 minutes ago
+                        </small>
+
+                    </div>
+
+                    <span class="unread-dot"></span>
+
+                </div>
+
+
+                <!-- Like -->
+
+                <div
+                    class="notification-item unread"
+                    data-notification="2">
+
+                    <div class="notification-icon like">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+                    <div class="notification-content">
+
+                        <strong>
+                            Ali Ahmed
+                        </strong>
+
+                        <p>
+                            liked your post.
+                        </p>
+
+                        <small>
+                            20 minutes ago
+                        </small>
+
+                    </div>
+
+                    <span class="unread-dot"></span>
+
+                </div>
+
+
+                <!-- Comment -->
+
+                <div
+                    class="notification-item unread"
+                    data-notification="3">
+
+                    <div class="notification-icon comment">
+
+                        <i class="fa-solid fa-comment"></i>
+
+                    </div>
+
+                    <div class="notification-content">
+
+                        <strong>
+                            Maya Ali
+                        </strong>
+
+                        <p>
+                            commented on your post.
+                        </p>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                    <span class="unread-dot"></span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="emptyNotifications"
+                class="empty-notifications">
+
+                <i class="fa-regular fa-bell-slash"></i>
+
+                <strong>
+                    No new notifications
+                </strong>
+
+                <span>
+                    You're all caught up!
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Profile Icon -->
+
+    <i class="fa-solid fa-user"></i>
+
+</div>
+    </header>
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <div class="dashboard">
+
+
+        <!-- =========================
+             LEFT SIDE - FEED
+        ========================== -->
+
+        <main class="feed">
+
+
+            <!-- =========================
+                 CREATE POST
+            ========================== -->
+
+            <div class="create-post">
+
+
+                <!-- Post Header -->
+
+                <div class="create-post-header">
+
+                    <div class="create-post-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Create a Post
+                        </strong>
+
+                        <span>
+                            Share something with your friends
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Post Input -->
+
+                <textarea
+                    id="postInput"
+                    placeholder="What's on your mind?"></textarea>
+
+
+                <!-- Upload Options -->
+
+                <div class="create-post-footer">
+
+
+                    <div class="upload-options">
+
+
+                        <!-- Photo -->
+
+                        <label
+                            for="photoInput"
+                            class="upload-btn">
+
+                            <i class="fa-solid fa-image"></i>
+
+                            <span>
+                                Photo
+                            </span>
+
+                        </label>
+
+
+                        <!-- Video -->
+
+                        <label
+                            for="videoInput"
+                            class="upload-btn">
+
+                            <i class="fa-solid fa-video"></i>
+
+                            <span>
+                                Video
+                            </span>
+
+                        </label>
+
+
+                        <!-- Hidden Inputs -->
+
+                        <input
+                            type="file"
+                            id="photoInput"
+                            accept="image/*"
+                            hidden>
+
+
+                        <input
+                            type="file"
+                            id="videoInput"
+                            accept="video/*"
+                            hidden>
+
+                    </div>
+
+
+                    <!-- Post Button -->
+
+                    <button
+                        class="btn"
+                        id="postBtn"
+                        type="button">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        <span>
+                            Post
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Media Preview -->
+
+                <div
+                    id="mediaPreview"
+                    class="media-preview">
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 DYNAMIC FEED
+                 Existing posts appear here
+            ========================== -->
+
+            <div id="feed"></div>
+
+
+        </main>
+
+
+        <!-- =========================
+             RIGHT SIDEBAR
+             FRIEND REQUESTS
+             SUGGESTED FRIENDS
+        ========================== -->
+
+        <aside class="right-sidebar">
+
+
+            <!-- =========================
+                 FRIEND REQUESTS
+            ========================== -->
+
+            <div class="sidebar-section">
+
+
+                <div class="sidebar-section-title">
+
+                    <h3>
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Friend Requests
+
+                    </h3>
+
+                    <span class="request-count">
+                        2
+                    </span>
+
+                </div>
+
+
+                <!-- Friend Request 1 -->
+
+                <div class="friend-card">
+
+                    <div class="friend-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="friend-info">
+
+                        <strong>
+                            Sarah Khan
+                        </strong>
+
+                        <small>
+                            5 mutual friends
+                        </small>
+
+                    </div>
+
+                    <div class="friend-actions">
+
+                        <button
+                            class="accept"
+                            type="button"
+                            title="Accept">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </button>
+
+                        <button
+                            class="reject"
+                            type="button"
+                            title="Reject">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Friend Request 2 -->
+
+                <div class="friend-card">
+
+                    <div class="friend-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="friend-info">
+
+                        <strong>
+                            Ali Ahmed
+                        </strong>
+
+                        <small>
+                            3 mutual friends
+                        </small>
+
+                    </div>
+
+                    <div class="friend-actions">
+
+                        <button
+                            class="accept"
+                            type="button"
+                            title="Accept">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </button>
+
+                        <button
+                            class="reject"
+                            type="button"
+                            title="Reject">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- =========================
+                 SUGGESTED FRIENDS
+            ========================== -->
+
+            <div class="sidebar-section">
+
+
+                <div class="sidebar-section-title">
+
+                    <h3>
+
+                        <i class="fa-solid fa-user-group"></i>
+
+                        Suggested Friends
+
+                    </h3>
+
+                </div>
+
+
+                <!-- Suggested User 1 -->
+
+                <div class="suggestion-card">
+
+                    <div class="suggestion-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="suggestion-info">
+
+                        <strong>
+                            Maya Ali
+                        </strong>
+
+                        <small>
+                            8 mutual friends
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        type="button"
+                        title="Add Friend">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Suggested User 2 -->
+
+                <div class="suggestion-card">
+
+                    <div class="suggestion-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="suggestion-info">
+
+                        <strong>
+                            Hamza Khan
+                        </strong>
+
+                        <small>
+                            4 mutual friends
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        type="button"
+                        title="Add Friend">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Suggested User 3 -->
+
+                <div class="suggestion-card">
+
+                    <div class="suggestion-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="suggestion-info">
+
+                        <strong>
+                            Ayesha Malik
+                        </strong>
+
+                        <small>
+                            2 mutual friends
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        type="button"
+                        title="Add Friend">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="/js/script.js"></script>
+
+    <script src="/js/upload.js"></script>
+
+    <script>
+
+/* =========================================================
+   FRIEND REQUESTS + SUGGESTED FRIENDS
+   WORKING FUNCTIONALITY
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================
+       ACCEPT FRIEND REQUEST
+    ========================== */
+
+    document.querySelectorAll(".friend-actions .accept").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card = button.closest(".friend-card");
+
+            if (!card) return;
+
+
+            // Get user name
+            const nameElement = card.querySelector(".friend-info strong");
+
+            const userName = nameElement
+                ? nameElement.textContent.trim()
+                : "Friend";
+
+
+            // Remove request card
+            card.style.transition = "all 0.3s ease";
+
+            card.style.opacity = "0";
+
+            card.style.transform = "translateX(20px)";
+
+
+            setTimeout(function () {
+
+                card.remove();
+
+                updateRequestCount();
+
+
+                // Small notification
+                showFriendMessage(
+                    userName + " is now your friend!"
+                );
+
+            }, 300);
+
+        });
+
+    });
+
+
+
+    /* =========================
+       REJECT FRIEND REQUEST
+    ========================== */
+
+    document.querySelectorAll(".friend-actions .reject").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card = button.closest(".friend-card");
+
+            if (!card) return;
+
+
+            const nameElement = card.querySelector(".friend-info strong");
+
+            const userName = nameElement
+                ? nameElement.textContent.trim()
+                : "Friend";
+
+
+            // Remove request card
+            card.style.transition = "all 0.3s ease";
+
+            card.style.opacity = "0";
+
+            card.style.transform = "translateX(-20px)";
+
+
+            setTimeout(function () {
+
+                card.remove();
+
+                updateRequestCount();
+
+
+                showFriendMessage(
+                    "Friend request from " + userName + " rejected."
+                );
+
+            }, 300);
+
+        });
+
+    });
+
+
+
+    /* =========================
+       SUGGESTED FRIEND - ADD
+    ========================== */
+
+    document.querySelectorAll(".suggestion-card .add-btn").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card = button.closest(".suggestion-card");
+
+            if (!card) return;
+
+
+            const nameElement =
+                card.querySelector(".suggestion-info strong");
+
+            const userName = nameElement
+                ? nameElement.textContent.trim()
+                : "Friend";
+
+
+            /* Change button */
+
+            button.innerHTML =
+                '<i class="fa-solid fa-check"></i>';
+
+
+            button.title = "Request Sent";
+
+            button.disabled = true;
+
+
+            /* Change button style */
+
+            button.style.background = "#dcfce7";
+
+            button.style.color = "#16a34a";
+
+
+            /* Change text */
+
+            const small =
+                card.querySelector(".suggestion-info small");
+
+            if (small) {
+
+                small.textContent = "Friend request sent";
+
+                small.style.color = "#16a34a";
+
+            }
+
+
+            showFriendMessage(
+                "Friend request sent to " + userName + "!"
+            );
+
+        });
+
+    });
+
+
+
+    /* =========================
+       UPDATE REQUEST COUNT
+    ========================== */
+
+    function updateRequestCount() {
+
+        const countElement =
+            document.querySelector(".request-count");
+
+        const remainingRequests =
+            document.querySelectorAll(".friend-card").length;
+
+
+        if (countElement) {
+
+            countElement.textContent =
+                remainingRequests;
+
+        }
+
+
+        /* No requests left */
+
+        if (remainingRequests === 0) {
+
+            const section =
+                document.querySelector(
+                    ".right-sidebar .sidebar-section"
+                );
+
+            if (section) {
+
+                const title =
+                    section.querySelector(
+                        ".sidebar-section-title"
+                    );
+
+                if (title) {
+
+                    const message =
+                        document.createElement("p");
+
+                    message.className =
+                        "no-requests-message";
+
+                    message.textContent =
+                        "No new friend requests.";
+
+                    title.insertAdjacentElement(
+                        "afterend",
+                        message
+                    );
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    /* =========================
+       SUCCESS MESSAGE
+    ========================== */
+
+    function showFriendMessage(message) {
+
+        const oldMessage =
+            document.querySelector(".friend-toast");
+
+        if (oldMessage) {
+            oldMessage.remove();
+        }
+
+
+        const toast =
+            document.createElement("div");
+
+        toast.className = "friend-toast";
+
+        toast.innerHTML =
+            '<i class="fa-solid fa-check-circle"></i>' +
+            '<span>' + message + '</span>';
+
+
+        document.body.appendChild(toast);
+
+
+        setTimeout(function () {
+
+            toast.classList.add("show");
+
+        }, 10);
+
+
+        setTimeout(function () {
+
+            toast.classList.remove("show");
+
+            setTimeout(function () {
+
+                toast.remove();
+
+            }, 300);
+
+        }, 2500);
+
+    }
+
+});
+</script>
+
+    <!-- =========================
+         HAMBURGER JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sidebar =
+            document.getElementById("sidebarMenu");
+
+        const overlay =
+            document.getElementById("sidebarOverlay");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            sidebar.classList.toggle("open");
+
+            overlay.classList.toggle("show");
+
+        });
+
+
+        overlay.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+
+            overlay.classList.remove("show");
+
+        });
+
+    </script>
+
+<script>
+
+/* =========================================================
+   NOTIFICATION DROPDOWN
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const notificationBtn =
+        document.getElementById("notificationBtn");
+
+    const notificationDropdown =
+        document.getElementById("notificationDropdown");
+
+    const notificationCount =
+        document.getElementById("notificationCount");
+
+    const notificationStatus =
+        document.getElementById("notificationStatus");
+
+    const markAllRead =
+        document.getElementById("markAllRead");
+
+    const notificationItems =
+        document.querySelectorAll(".notification-item");
+
+    const emptyNotifications =
+        document.getElementById("emptyNotifications");
+
+
+    /* =========================
+       OPEN / CLOSE DROPDOWN
+    ========================== */
+
+    notificationBtn.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        notificationDropdown.classList.toggle("show");
+
+    });
+
+
+    /* =========================
+       CLOSE WHEN CLICK OUTSIDE
+    ========================== */
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !notificationDropdown.contains(event.target) &&
+            !notificationBtn.contains(event.target)
+        ) {
+
+            notificationDropdown.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* =========================
+       CLICK NOTIFICATION
+    ========================== */
+
+    notificationItems.forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+            if (item.classList.contains("unread")) {
+
+                item.classList.remove("unread");
+
+                const dot =
+                    item.querySelector(".unread-dot");
+
+                if (dot) {
+                    dot.remove();
+                }
+
+                updateNotificationCount();
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       MARK ALL READ
+    ========================== */
+
+    markAllRead.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        notificationItems.forEach(function (item) {
+
+            item.classList.remove("unread");
+
+            const dot =
+                item.querySelector(".unread-dot");
+
+            if (dot) {
+                dot.remove();
+            }
+
+        });
+
+        updateNotificationCount();
+
+    });
+
+
+    /* =========================
+       UPDATE COUNT
+    ========================== */
+
+    function updateNotificationCount() {
+
+        const unreadItems =
+            document.querySelectorAll(
+                ".notification-item.unread"
+            );
+
+        const count = unreadItems.length;
+
+
+        if (count > 0) {
+
+            notificationCount.textContent = count;
+
+            notificationCount.style.display = "flex";
+
+            notificationStatus.textContent =
+                count + (count === 1
+                    ? " unread"
+                    : " unread");
+
+            emptyNotifications.style.display =
+                "none";
+
+        } else {
+
+            notificationCount.style.display =
+                "none";
+
+            notificationStatus.textContent =
+                "All caught up";
+
+            emptyNotifications.style.display =
+                "flex";
+
+        }
+
+    }
+
+
+    /* Initial count */
+
+    updateNotificationCount();
+
+});
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
