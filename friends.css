@@ -1,0 +1,251 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+}
+
+/* Navbar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    background:#1877f2;
+    color:white;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.navbar ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active{
+    color:#dbeafe;
+}
+
+/* Page */
+
+.friends-page{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.page-header h1{
+    color:#1877f2;
+    font-size:38px;
+}
+
+.page-header input{
+    width:320px;
+    padding:12px 18px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+}
+
+/* ===========================
+   Friends Grid
+=========================== */
+
+.friends-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* ===========================
+   Friend Card
+=========================== */
+
+.friend-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    text-align:center;
+    padding-bottom:20px;
+}
+
+.friend-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(24,119,242,.18);
+}
+
+.friend-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.friend-card h3{
+    margin-top:18px;
+    color:#1877f2;
+    font-size:24px;
+}
+
+.friend-card p{
+    color:#666;
+    margin:10px 0 20px;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.friend-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.accept,
+.reject{
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.accept{
+    background:#1877f2;
+    color:#fff;
+}
+
+.accept:hover{
+    background:#0f5ed8;
+}
+
+.reject{
+    background:#e4e6eb;
+    color:#333;
+}
+
+.reject:hover{
+    background:#d8dbe2;
+}
+
+/* ===========================
+   Search Box
+=========================== */
+
+.page-header input{
+    transition:0.3s;
+}
+
+.page-header input:focus{
+    border:2px solid #1877f2;
+    box-shadow:0 0 10px rgba(24,119,242,.25);
+}
+
+/* ===========================
+   Friend Card Animation
+=========================== */
+
+.friend-card img{
+    transition:0.4s;
+}
+
+.friend-card:hover img{
+    transform:scale(1.05);
+}
+
+/* ===========================
+   Button Hover
+=========================== */
+
+.accept:hover,
+.reject:hover{
+    transform:translateY(-3px);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.page-header{
+    flex-direction:column;
+    gap:20px;
+}
+
+.page-header input{
+    width:100%;
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+}
+
+.navbar ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:26px;
+}
+
+.friend-card img{
+    height:220px;
+}
+
+}
+
+@media(max-width:500px){
+
+.page-header h1{
+    font-size:30px;
+}
+
+.friend-buttons{
+    flex-direction:column;
+    padding:0 20px;
+}
+
+.accept,
+.reject{
+    width:100%;
+}
+
+}

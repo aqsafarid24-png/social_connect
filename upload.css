@@ -1,0 +1,241 @@
+.upload-options {
+    display: flex;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    background: #eef4ff;
+    color: #1877f2;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.upload-btn:hover {
+    background: #dbeafe;
+}
+
+.media-preview {
+    margin: 10px 0;
+}
+
+.preview-image,
+.preview-video {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 10px;
+    display: block;
+}
+
+.preview-remove {
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
+
+.uploaded-media {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 12px;
+}
+
+/* ===============================
+   MEDIA PREVIEW
+================================ */
+
+.media-preview {
+    margin: 15px 0;
+}
+
+.preview-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.preview-video {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 12px;
+    display: block;
+}
+
+
+/* ===============================
+   UPLOAD BUTTONS
+================================ */
+
+.upload-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.upload-btn {
+    background: #eef5ff;
+    color: #1877f2;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.upload-btn:hover {
+    background: #dbeafe;
+}
+
+
+/* ===============================
+   VIDEO POST
+================================ */
+
+.post-card video.post-image {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* =========================
+   UPLOADED POST
+========================= */
+
+#feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Text */
+
+.post-text {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+
+/* Uploaded Image */
+
+.post-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* Uploaded Video */
+
+.post-video {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* Preview */
+
+.media-preview {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.preview-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.preview-video {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 10px;
+}
+
+
+/* Post Actions */
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.post-actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #555;
+    padding: 8px 15px;
+}
+
+.post-actions button:hover {
+    color: #1877f2;
+}
+
+.new-comment-section {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.new-comment-input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.new-comment-submit {
+    padding: 10px 15px;
+    margin-left: 5px;
+    background: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.new-comment-list {
+    margin-top: 10px;
+}
+
+.new-comment-list .comment {
+    background: #f0f2f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.new-like-btn,
+.new-comment-btn,
+.new-share-btn {
+    cursor: pointer;
+}

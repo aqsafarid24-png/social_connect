@@ -1,0 +1,233 @@
+/* =========================================================
+   PROFESSIONAL SOCIALCONNECT SIDEBAR
+   Existing hamburger functionality preserved
+========================================================= */
+
+.menu-btn {
+    position: fixed;
+
+    top: 11px;
+    left: 12px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 12px;
+
+    background: #1877f2;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 1100;
+
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.25);
+
+    transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+    background: #0d65d9;
+
+    transform: translateY(-1px);
+}
+
+.menu-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar-menu {
+    position: fixed;
+
+    top: 0;
+    left: -285px;
+
+    width: 265px;
+    height: 100vh;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e7eb;
+
+    box-shadow: 8px 0 30px rgba(15, 23, 42, 0.10);
+
+    z-index: 1000;
+
+    transition: left 0.3s ease;
+
+    padding: 28px 12px;
+}
+
+.sidebar-menu.open {
+    left: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR LOGO
+========================================================= */
+
+.sidebar-logo {
+    padding: 8px 12px 25px;
+
+    text-align: left;
+
+    color: #1877f2;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.sidebar-menu a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 4px 0;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.sidebar-menu a:hover {
+    background: #eef5ff;
+
+    color: #1877f2;
+
+    transform: translateX(2px);
+}
+
+.sidebar-menu a.active {
+    background: #eef5ff;
+
+    color: #1877f2;
+
+    box-shadow: inset 3px 0 0 #1877f2;
+}
+
+.sidebar-menu i {
+    width: 21px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-menu .logout {
+    color: #ef4444;
+
+    margin-top: 18px;
+
+    border-top: 1px solid #edf0f4;
+
+    border-radius: 0 0 11px 11px;
+
+    padding-top: 17px;
+}
+
+.sidebar-menu .logout:hover {
+    background: #fff1f2;
+
+    color: #dc2626;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.42);
+
+    backdrop-filter: blur(2px);
+
+    z-index: 900;
+
+    display: none;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .menu-btn {
+        top: 8px;
+        left: 8px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+    .sidebar-menu {
+        width: 250px;
+
+        left: -270px;
+    }
+
+    .sidebar-logo {
+        font-size: 21px;
+    }
+
+    .sidebar-menu a {
+        padding: 13px 14px;
+    }
+}
